@@ -1,0 +1,19 @@
+<h1>Only the longuest will survive </h1>
+
+
+
+
+
+<p><%= @start_time %></p>
+<p>Here is your grid : </p>
+<p><%= @grid %></p>
+
+<form action="/score" method="post">
+  <%= hidden_field_tag :authenticity_token, form_authenticity_token %>
+  <label for="question">What is your guess ?</label>
+  <input type="text" id="question" name="word" placeholder="The longest word?">
+  <input type="hidden"  name="grid" value="<%= @grid %>">
+  <input type="hidden"  name="start_time" value="<%= @start_time %>">
+  <input type="submit" value="Go on!">
+</form>
+
